@@ -10,7 +10,7 @@ const Time = () => {
   useEffect(() => {
     //Get time
     const intervalId = setInterval(() => {
-      setTime(moment().format('LTS, Do MMMM YYYY').toString());
+      setTime(moment().format().toString());
     }, 1000);
     return () => {
       clearInterval(intervalId)
@@ -19,7 +19,13 @@ const Time = () => {
 
   return (
   <div>
-    <p className="Time-weather">{time}</p>
+    <div className="Time-no-responsive">
+      <p className="Time">{moment(time).format('LTS, Do MMMM YYYY')}</p>
+    </div>
+    <div className="Time-responsive">
+      <p className="Time">{moment(time).format('Do MMMM YYYY')}</p>
+      <p className="Time">{moment(time).format('LTS')}</p>
+    </div>
   </div>
   )
 }

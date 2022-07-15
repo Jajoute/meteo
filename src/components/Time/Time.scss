@@ -1,19 +1,26 @@
+@use './constant';
+
+// Small devices (phones, 576px and up)
+@media (max-width: 576px) { 
+  @include constant.responsive(block, none);
+ }
+
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {  }
+@media (min-width: 576px) { 
+  @include constant.responsive(none, block);
+ }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {  }
+@media (min-width: 768px) { 
+  @include constant.responsive(none,block);
+ }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {  }
+@media (min-width: 992px) { 
+  @include constant.responsive(none,block);
+ }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {  }
-
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {  }
-
-.Time-weather{
+.Time{
   font-size: 20px;
   font-weight: bold;
   color: white;

@@ -1,0 +1,30 @@
+@mixin responsive($Loc, $Time, $p, $icon, $img,$Time-weather-responsive-display, $Time-weather-no-responsive-display) {
+  body .Loc-temp{
+    font-size: $Loc;
+  }
+  
+  body .Time-weather{
+    font-size: $Time;
+  }
+  body .data-weather{
+    div{
+      p{
+        font-size: $p;
+      }
+      img{
+        height: $icon;
+      }
+    }
+  }
+
+  body .App-logo {
+    height: $img;
+  }
+
+  body .Time-weather-responsive{
+    display: $Time-weather-responsive-display;
+  }
+  body .Time-weather-no-responsive{
+    display: $Time-weather-no-responsive-display;
+  }
+}

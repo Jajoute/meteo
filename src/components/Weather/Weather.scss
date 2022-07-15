@@ -1,17 +1,23 @@
+@use "./constant";
+// Small devices (phones, 576px and up)
+@media (max-width: 576px) { 
+  @include constant.responsive(30px, 15px, 15px, 40px, 117px, block, none);
+ }
+
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {  }
+@media (min-width: 576px) { 
+  @include constant.responsive(35px, 18px, 18px, 45px,117px, none, block);
+ }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {  }
+@media (min-width: 768px) { 
+  @include constant.responsive(40px, 20px, 20px, 45px,117px, none, block);
+ }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {  }
-
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {  }
-
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {  }
+@media (min-width: 992px) {
+  @include constant.responsive(40px, 20px, 20px, 50px, 117px,none, block);
+ }
 
 .Weather{
   display: flex;
@@ -21,15 +27,23 @@
   flex-wrap: wrap;
 }
 
+.Weather-hide{
+  display: none;
+}
+
+.Loading{
+  height: calc(100vh - 116.4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .Loc-temp{
-  font-size: 40px;
   font-weight: bold;
   margin: 0px;
   color: white;
 }
 
 .Time-weather{
-  font-size: 20px;
   font-weight: bold;
   color: white;
 }
@@ -51,23 +65,16 @@
     justify-content: center;
     align-content: center;
     p{
-      font-size: 20px;
       font-weight: bold;
       color: white;
       margin: 0px;
     }
-    img{
-      height: 50px;
-    }
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 20vmin;
-    pointer-events: none;
-  }
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  pointer-events: none;
 }
 
 @keyframes App-logo-spin {

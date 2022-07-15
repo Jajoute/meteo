@@ -1,0 +1,9 @@
+@mixin responsive($Time-responsive-display, $Time-no-responsive-display) {
+  body .Time-responsive{
+    display: $Time-responsive-display;
+    text-align: center;
+  }
+  body .Time-no-responsive{
+    display: $Time-no-responsive-display;
+  }
+}

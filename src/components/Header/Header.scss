@@ -1,3 +1,6 @@
+// Small devices (phones, 576px and up)
+@media (max-width: 576px) { }
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {  }
 
@@ -6,12 +9,6 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {  }
-
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {  }
-
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {  }
 
 .Header {
   height: 50px;
@@ -25,4 +22,5 @@
 
 .App-link {
   color: #ffffff;
+  font-weight: 400;
 }

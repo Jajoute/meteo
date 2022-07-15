@@ -51,7 +51,7 @@ const Weather = () => {
   
   useEffect(() => {
     getWeather();
-  })
+  },[])
   
   return (
   <div className="Weather">

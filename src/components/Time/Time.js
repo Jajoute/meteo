@@ -5,7 +5,7 @@ import 'moment/locale/fr';
 
 const Time = () => {
   moment.locale('fr');
-  const [time, setTime] = useState(moment().format('LTS, Do MMMM YYYY').toString());
+  const [time, setTime] = useState(moment().format().toString());
 
   useEffect(() => {
     //Get time

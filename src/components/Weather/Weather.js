@@ -63,7 +63,7 @@ const Weather = () => {
     if(parseInt(weatherData.current_weather.temperature)<=0){
       return <Alert severity="error">Couvrez vous bien!</Alert>
     }
-    if(parseInt(weatherData.current_weather.temperature)>"0" && parseInt(weatherData.current_weather.temperature) <20){
+    if(parseInt(weatherData.current_weather.temperature)>="0" && parseInt(weatherData.current_weather.temperature) <=20){
       return <Alert severity="error">un peu frais!</Alert>
     }
     if(parseInt(weatherData.current_weather.temperature)>25){
@@ -78,7 +78,7 @@ const Weather = () => {
   
   return (
     <div>
-        <div className={weather!==false?"Weather":"Weather-hide"}>
+        {weather!==false?(<div className={"Weather"}>
           <div className="Alert">{weather?GetAlert(weather):""}</div>
           <Time></Time>
           <p className="Loc-temp">Paris</p>
@@ -108,11 +108,11 @@ const Weather = () => {
               <p>{weather?getPressure(weather)+"hPa":""}</p>
             </div>
           </div>
-        </div>
+        </div>):
 
-        <div className={weather===false?"Loading":"Weather-hide"}>
+        (<div className={"Loading"}>
           <CircularProgress></CircularProgress>
-        </div>
+        </div>)}
     </div>
   )
 }

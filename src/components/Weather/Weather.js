@@ -10,6 +10,7 @@ import axios from 'axios';
 import moment from 'moment';
 import code from "./code";
 import CircularProgress from '@mui/material/CircularProgress';
+import Alert from '@mui/material/Alert';
 import Time from '../Time/Time';
 
 const Weather = () => {
@@ -57,6 +58,18 @@ const Weather = () => {
       return cloudy;
     }
   }
+
+  function GetAlert(weatherData){
+    if(parseInt(weatherData.current_weather.temperature)<=0){
+      return <Alert severity="error">Couvrez vous bien!</Alert>
+    }
+    if(parseInt(weatherData.current_weather.temperature)>"0" && parseInt(weatherData.current_weather.temperature) <20){
+      return <Alert severity="error">un peu frais!</Alert>
+    }
+    if(parseInt(weatherData.current_weather.temperature)>25){
+      return <Alert severity="error">oh il fait chaud aujourd'hui!</Alert>
+    }
+  }
   
   useEffect(() => {
     getWeather();
@@ -66,6 +79,7 @@ const Weather = () => {
   return (
     <div>
         <div className={weather!==false?"Weather":"Weather-hide"}>
+          <div className="Alert">{weather?GetAlert(weather):""}</div>
           <Time></Time>
           <p className="Loc-temp">Paris</p>
           {/* Start contains responsive */}

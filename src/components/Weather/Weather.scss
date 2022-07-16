@@ -73,11 +73,53 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: ApplogoAnimation infinite 20s linear;
   pointer-events: none;
 }
 
-@keyframes App-logo-spin {
+.Alert {
+  animation: 5s alertAnimation;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+@keyframes alertAnimation {
+  0% {
+    visibility: hidden;
+  }
+  10% {
+    visibility: hidden;
+  }
+  20% {
+    visibility: hidden;
+  }
+  30% {
+    visibility: hidden;
+  }
+  40% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+  60% {
+    visibility: visible;
+  }
+  70% {
+    visibility: visible;
+  }
+  80% {
+    visibility: visible;
+  }
+  90% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes ApplogoAnimation {
   from {
     transform: rotate(0deg);
   }
